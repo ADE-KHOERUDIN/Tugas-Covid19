@@ -1,13 +1,12 @@
 # Tugas-Covid19
 Tugas Pemograman WEB Membuat halaman situs COVID-19. 
+^ Demo: https://corona.sirajin.com
+
 
 Dengan mengambil referensi dari situs:
 - https://pikobar.jabarprov.go.id
 - https://covid19.go.id
 - https://covid19.cimahikota.go.id
-
-
-^ Demo: https://corona.sirajin.com
 
 
 Tools Pendukung:
@@ -29,4 +28,4 @@ KELOMPOK 4:
 - M. Rafi Hanief
 - M. Rian Permana
 
-my page Ad.SiRajin.com
+my page http://Ad.SiRajin.com
