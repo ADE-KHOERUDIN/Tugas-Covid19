@@ -1,0 +1,59 @@
+.text-center.shadow-lg.judul {
+  /*margin top: 20px !important;*/
+}
+
+@media (min-width: 768px) {
+  #judul1 {
+    text-shadow: 2px 4px black;
+    padding-right: 20px;
+    font-size: 50px;
+  }
+}
+
+#judul1 {
+  text-shadow: 2px 4px black;
+  padding-right: 20px;
+  font-size: 25px;
+}
+
+#judul2 {
+  text-shadow: 2px 4px black;
+  padding-right: 20px;
+  font-size: 25px;
+}
+
+@media (min-width: 768px) {
+  #judul2 {
+    text-shadow: 2px 4px black;
+    padding-right: 20px;
+    font-size: 50px;
+  }
+}
+
+#hotel1 {
+  margin: 0;
+  height: 100px;
+}
+
+@media (min-width: 768px) {
+  #hotel1 {
+    width: 100%;
+  }
+}
+
+#hotel {
+  padding: 5px;
+}
+
+.container.text-center {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#identitas {
+  border-radius: 10px;
+}
+label{
+  text-align: left !important;
+}
+

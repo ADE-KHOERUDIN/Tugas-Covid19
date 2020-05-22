@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Peta Sebaran Corona Virus Indonesia Berdasarkan Provinsi">
+  <meta name="author" content="Ade Khoerudin">
+
+  <title>COVID-19 - Data Indonesia Berdasarkan Provinsi</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/gaya.css" rel="stylesheet">
+  <meta name="theme-color" content="#399f4f"/>
+  <meta name="msapplication-navbutton-color" content="#399f4f"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="#399f4f"/>
+</head>
+
+<body>
+
+ <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark  logo fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">UNJANI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+       <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="beritahome.html">Berita</a>
+		  </li>
+		  <!-- Dropdown -->
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toogle" href="provinsi.html" id="navbardrop" data-toggle="dropdown">Data</a>
+            <div class="dropdown-menu" id="menu">
+				<a class="nav-link" href="dunia.html">Data Dunia</a>
+				
+                <a class="nav-link active" href="provinsi.html" >Data Provinsi</a>
+            </div>
+		  </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="kontak.html">Kontak</a>
+		  </li>
+		  
+		  <li class="nav-item">
+
+            <a class="nav-link " href="teaminfo.html">Team</a>
+
+		  </li>
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+ 	<div class="clear"> </div>
+ 
+	<div class="container">
+	<div class="row">
+		<div class="data-peta">
+		<h2> Data Terkonfirmasi Indonesia </h2>
+		<p class="text-secondary">Update Terakhir: <b id="date">2020</b></p>
+  <div class="row">
+    <div class="col-sm">
+      <div class="data">
+			  <div class ="positif alert alert-warning">
+			   <div class ="keterangan">
+				<span class="text-secondary">TERKONFIRMASI</span>
+				<div class="cor-positif angka" id="terjangkit"></div>
+				<span>ORANG</span> <span class="kasusbarupositif">+ <b id="newinfeksi">0</b> Baru</span>
+			   </div>
+			   <div class="emoji"><img src="https://kawalcorona.com/uploads/sad-u6e.png" alt="Positif" /></div>
+			  </div>
+		</div>
+    </div>
+    <div class="col-sm">
+     <div class="data">
+		  <div class = "sembuh alert alert-success">
+		   <div class ="keterangan">
+			<span class="text-secondary">SEMBUH</span>
+			<div class="cor-sembuh angka" id="membaik"></div>
+			<span>ORANG</span>
+		   </div>
+		   <div class="emoji"><img src="https://kawalcorona.com/uploads/happy-ipM.png" alt="Sembuh" /></div>
+		  </div>
+	 </div>
+    </div>
+    <div class="col-sm">
+      <div class="data">
+		  <div class = "meninggal alert alert-danger">
+		   <div class ="keterangan">
+			<span class="text-secondary">MENINGGAL</span>
+			<div class="cor-meninggal angka" id="memburuk"></div>
+			<span>ORANG</span> <span class="kasusbarumeninggal">+ <b id="newmeninggal">0</b> Meninggal</span>
+		   </div>
+		   <div class="emoji">
+			<img src="https://kawalcorona.com/uploads/emoji-LWx.png" alt="Meninggal" /></div>
+		   </div>
+	  </div>
+    </div>
+  </div>
+			<div class="card overflow-hidden bg-white work-progress shadow radius">
+									<div class="card-header">
+										<h4 class="card-title">Statistik Kasus Coronavirus di Indonesia</h4>
+									</div>
+									<div class="card-body">
+										<div class="chart-wrapper"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+											<canvas id="total-coversations" class="h-160 chart-dropshadow-info chartjs-render-monitor" width="886" height="171" style="display: block; width: 886px; height: 171px;"></canvas>
+										</div>
+										<div class="row mt-6">
+										<div class="chart-wrapper">
+											<canvas id="deals" class="chart-dropshadow-success chartjs-render-monitor" hidden="" height="85" style="display: block; width: 0px; height: 85px;" width="0"></canvas>
+										</div>
+										</div>
+									</div>
+								</div>
+		<div class="clear" style="margin-top:15px;"></div>
+			<h4> Peta Sebaran Virus Corona di Indonesia Berdasarkan Provinsi</h4>
+			<iframe src="map-indo.html" frameborder="0" class="iframe-peta" height="100%" width="100%"></iframe>
+		<b>Note: </b><small>Data peta tidak diperbarui</small>
+		<div class="clear"></div>
+		<div class="container">
+		<div class="row">
+				<div class="table-responsive covid-data-table-wrapper bg-white shadow radius">
+					<table class="table table-hover" id="tabel">
+						<thead class="thead-hijau">
+							<tr>
+								<th>No.</th>
+								<th>Provinsi</th>
+								<th>Positif</th>
+								<th>Sembuh</th>
+								<th>Meninggal</th>
+								
+							</tr>
+						</thead>
+					</table>
+				</div>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+  <!-- /.container -->
+	<div class="clear"> </div>
+  <!-- Footer -->
+  <footer class="py-5 bg-hijau">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Unjani 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	var d = new Date();
+	var month = new Array();
+	  month[0] = "Januari";
+	  month[1] = "Februari";
+	  month[2] = "Maret";
+	  month[3] = "April";
+	  month[4] = "Mei";
+	  month[5] = "Juni";
+	  month[6] = "Juli";
+	  month[7] = "Agustus";
+	  month[8] = "September";
+	  month[9] = "Oktober";
+	  month[10] = "November";
+	  month[11] = "Desember";
+	  
+	$("#date").html(d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear());
+		var dataIndo = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://corona.lmao.ninja/v2/countries/indonesia",
+                "method": "GET",
+            }
+            $.ajax(dataIndo).done(function (response) {
+                $('#terjangkit').html(response.cases);
+                $('#membaik').html(response.recovered);
+                $('#memburuk').html(response.deaths);
+		$('#newmeninggal').html(response.todayDeaths);
+		$('#newinfeksi').html(response.todayCases);
+            });
+	});
+	</script>
+	 <script>
+        $(document).ready(function(){
+            var dataIDs = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://indonesia-covid-19.mathdro.id/api/provinsi",
+                "method": "GET"
+            }
+            $.ajax(dataIDs).done(function (response) {
+                for (i in response.data) {
+                    $('#tabel').append('<tbody><tr><td>'+(parseInt(i)+1)+'</td><td>'+response.data[i].provinsi+'</td><td>'+response.data[i].kasusPosi+'</td><td>'+response.data[i].kasusSemb+'</td><td>'+response.data[i].kasusMeni+'</td></tr></tbody>');
+                } 
+            });        
+        });
+    </script>
+    <script src="js/indo.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+</html>
